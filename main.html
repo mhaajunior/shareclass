@@ -1,51 +1,61 @@
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>inCLASS</title>
-
-  </head>
-  <body>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+      #btopic1 {
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,193,37,1) 0%, rgba(248,119,119,1) 90.2% );
+          }
+      #myvideo{
+        position:fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
+      </style>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         function login() {
             $('#inputPassword')[0].value = ""
             $('#inputUSername')[0].value = ""
         }
     </script>
-    <div class="container-fluid" style="background-color: FFCA00">
+    <div class="container-fluid" id="btopic1">
         <div class="row">
             <div class="col-md-7"><h1>inCLASS</h1></div>
             <div class="col-md-5">
                 <div class="row">
                     <form class="form-inline" onsubmit="login()" >
-                        <div class="col-md-4" ><a data-toggle="modal" data-target="#exampleModal">Sign up</a>&nbsp|&nbsp<a>Sign in</a></div>
+                        <div class="col-md-8" ><a data-toggle="modal" data-target="#Signupmodel">Sign up</a>&nbsp|&nbsp<a>Sign in</a></div>
                         <div class="form-group">
-                            <input type="text" id="inputUSername" class="col-md-4" aria-describedby="passwordHelpInline" placeholder="Username">
-                            <input type="password" id="inputPassword" class="col-md-4" aria-describedby="passwordHelpInline" placeholder="Password">
-                            <div class="col-md-2">
-                                    <button type="submit" class="btn btn-light" >Submit</button>
+                            <input type="text" id="inputUSername" class="col-sm-3 col-md-4" aria-describedby="passwordHelpInline" placeholder="Username">
+                            <input type="password" id="inputPassword" class="col-sm-3 col-md-4" aria-describedby="passwordHelpInline" placeholder="Password">
+                            <div class="row">&nbsp
+                            <div class="col-auto">
+                                 <button type="submit" class="btn btn-light">Submit</button>
+                            </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            </div>
         </div>
     </div>
-    <div class="container-fluid" background="child.jpg">
-      <img src="child.jpg" alt="child" style="width:625px;height:720px;">
-    </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog" role="document">
+    <div class="modal fade" id="Signupmodel" tabindex="-1" role="dialog" aria-labelledby="sumodel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+            <h5 class="modal-title" id="sumodel">Sign up</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -53,8 +63,8 @@
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Username</label>
-                <input type="text" class="form-control" id="recipient-name">
+                <label for="recipient-username" class="col-form-label">Username</label>
+                <input type="text" class="form-control" id="recipient-username">
               </div>
               <div class="form-group">
                 <label for="password-text" class="col-form-label">Password</label>
@@ -62,16 +72,94 @@
               </div>
               <div class="form-group">
                 <label for="repassword-text" class="col-form-label">Repassword</label>
-                <input type="password" class="form-control" id="recipient-password">
+                <input type="password" class="form-control" id="recipient-repassword">
               </div>
            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Sign in</button>
-         </div>
+            <button type="button" class="btn btn-primary">Sign up</button>
+          </div>
         </div>
-  </div>
-</div>
-  </body>
+       </div>
+     </div>
+     <div class="container">
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">&nbsp</div>
+        <div class="row">
+          <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#Hostmodal"><h1>Host</h1></button>
+        </div>
+        <div class="row">&nbsp</div>
+        <div class="row">
+          <button type="button" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#Joinmodal"><h1>Join</h1></button>
+        </div>
+     </div>
+     <div class="modal fade" id="Hostmodal" tabindex="-1" role="dialog" aria-labelledby="homodal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="homodel">Host</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Name</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-id" class="col-form-label">Id</label>
+                  <input type="text" class="form-control" class="col-md-4" id="recipient-id">
+                </div>
+             </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Done</button>
+            </div>
+          </div>
+         </div>
+     </div>
+     <div class="modal fade" id="Joinmodal" tabindex="-1" role="dialog" aria-labelledby="jomodal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="jomodel">Join</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-jname" class="col-form-label">Name</label>
+                  <input type="text" class="form-control" id="recipient-jname">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-jid" class="col-form-label">Id</label>
+                  <input type="text" class="form-control" class="col-md-4" id="recipient-jid">
+                </div>
+             </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Done</button>
+            </div>
+          </div>
+         </div>
+     </div>
+     <video autoplay muted loop id="myVideo">
+        <source src="book.webm" type="video/webm">
+     </video>
+</body>
 </html>
+<!-- btopic1 background-image: linear-gradient( 269.1deg, rgba(251,206,91,0.68) 1.4%,  rgba(247,116,35,1) 90.1% );-->
