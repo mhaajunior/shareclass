@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Screen Sharing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="shortcut icon" href="/demos/logo.png">
+  <script src="/dist/RTCMultiConnection.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
+  <script src="/dev/getHTMLMediaElement.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/demos/css/stylesheet.css">
+  <script src="/node_modules/clipboard/dist/clipboard.min.js"></script>
+</head>
+<body>
+  <header>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <div class="container-fluid">
+      <div class="row">
+        <a class="logo" href="/"><img src="/demos/ScreenLogo.png" alt="RTCMultiConnection"></a>
+        <h1><p1>ShareScreen</p1> Dotcom</h1>
+        <div style="margin-top:30px;">
+          <a class="no-mobile" href="/">Home</a>
+          <a class="no-mobile" onclick="changeColor()">Styles</a>
+          <a class="no-mobile" href="https://www.rtcmulticonnection.org/FAQ/">FAQ</a>
+          <a class="no-mobile" href="https://github.com/zeyasE/shareclass">Github</a>
+          <a class="no-mobile" href="https://gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <p class="border"></p>
+  <div class="margin">
+    <h1>Screen Sharing Online<p>One to many screen sharing using RTCMulticonnection.</p></h1>
+    <section class="make-center">
+      <div class="make-center">
+        <button id="open-room" data-toggle="tooltip" data-placement="top" title="Click to build room" >Host Screen</button>
+        <!-- href="/demos/share.html" -->
+        <button id="join-room" data-toggle="tooltip" data-placement="top" title="Click to join room">Join Screen</button>
+        <button id="open-or-join-room" class="no-mobile">Open or Join</button>
+      </div>
+    </br>
+    <input type="text" id="roomid" value="abcdef" autocorrect=off autocapitalize=off size=20>
+    </section>
+  </br>
+  </div>
+  <div class="make-center">
+    <div id="videos-container" style="margin: 10px 0;"></div>
+  </div>
+    <div id="room-urls" style="text-align: center;display: none;background: #f0e8e8;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
+  
+  <div class="controlsize">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-block-start: 50px;">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="colorful-flower-on-dark-tropical-260nw-721703848.webp" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="colorful-flower-on-dark-tropical-260nw-721703848.webp" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img_lights.jpg" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+<script>
+  document.getElementById('open-room').onclick = function() {
+    disableInputButtons();
+    var lengthroomid = document.getElementById('roomid').value
+    if(lengthroomid.length >= 5){
+      connection.open(document.getElementById('roomid').value, function() {
+          showRoomURL(connection.sessionid);
+        });
+    }else{
+      alert('Please check you room id that must more than 5 alphabet');
+      window.location.reload()
+    }
+};
+
+document.getElementById('join-room').onclick = function() {
+    disableInputButtons();
+
+    connection.sdpConstraints.mandatory = {
+        OfferToReceiveAudio: true,
+        OfferToReceiveVideo: true
+    };
+    connection.join(document.getElementById('roomid').value);
+};
+
+document.getElementById('open-or-join-room').onclick = function() {
+    disableInputButtons();
+    connection.openOrJoin(document.getElementById('roomid').value, function(isRoomExist, roomid) {
+        if (isRoomExist === false && connection.isInitiator === true) {
+          connection.open(document.getElementById('roomid').value, function() {
+          showRoomURL(connection.sessionid);
+    });
+        }
+
+        else if(isRoomExist) {
+          connection.sdpConstraints.mandatory = {
+              OfferToReceiveAudio: true,
+              OfferToReceiveVideo: true
+          };
+        }
+    });
+};
+
+var connection = new RTCMultiConnection();
+
+connection.socketURL = '/';
+
+connection.socketMessageEvent = 'screen-sharing-demo';
+
+connection.session = {
+    screen: true,
+    oneway: true
+};
+
+connection.sdpConstraints.mandatory = {
+    OfferToReceiveAudio: false,
+    OfferToReceiveVideo: false
+};
+
+// https://www.rtcmulticonnection.org/docs/iceServers/
+// use your own TURN-server here!
+
+connection.videosContainer = document.getElementById('videos-container');
+connection.onstream = function(event) {
+    var existing = document.getElementById(event.streamid);
+    if(existing && existing.parentNode) {
+      existing.parentNode.removeChild(existing);
+    }
+
+    event.mediaElement.removeAttribute('src');
+    event.mediaElement.removeAttribute('srcObject');
+    event.mediaElement.muted = true;
+    event.mediaElement.volume = true;
+
+    var video = document.createElement('video');
+
+    try {
+        video.setAttributeNode(document.createAttribute('autoplay'));
+        video.setAttributeNode(document.createAttribute('playsinline'));
+    } catch (e) {
+        video.setAttribute('autoplay', true);
+        video.setAttribute('playsinline', true);
+    }
+
+      if(event.type === 'local') {
+        video.volume = true;
+      }
+    video.srcObject = event.stream;
+
+    var height = innerHeight - 500;
+    var width = innerWidth - 500;
+    var mediaElement = getHTMLMediaElement(video, {
+        title: event.userid,
+        buttons: ['full-screen'],
+        width: width,
+        heigth: height,
+        showOnMouseEnter: true
+    });
+
+    connection.videosContainer.appendChild(mediaElement);
+
+    setTimeout(function() {
+        mediaElement.media.play();
+    }, 1000);
+
+    mediaElement.id = event.streamid;
+};
+
+connection.onstreamended = function(event) {
+    var mediaElement = document.getElementById(event.streamid);
+    if (mediaElement) {
+        mediaElement.parentNode.removeChild(mediaElement);
+
+        if(event.userid === connection.sessionid && !connection.isInitiator) {
+          alert('Broadcast is ended. We will reload this page to clear the cache.');
+          window.location.reload();
+        }
+    }
+};
+
+connection.onMediaError = function(e) {
+    if (e.message === 'Concurrent mic process limit.') {
+        if (DetectRTC.audioInputDevices.length <= 1) {
+            alert('Please select external microphone. Check github issue number 483.');
+            return;
+        }
+
+        var secondaryMic = DetectRTC.audioInputDevices[1].deviceId;
+        connection.mediaConstraints.audio = {
+            deviceId: secondaryMic
+        };
+
+        connection.join(connection.sessionid);
+    }
+};
+
+// function change(color){
+//     document.body.style.background = color
+// }
+
+// function changeColor(){
+//     change('yellow')
+// }
+
+function disableInputButtons() {
+    document.getElementById('roomid').onkeyup();
+
+    document.getElementById('open-or-join-room').disabled = true;
+    document.getElementById('open-room').disabled = true;
+    document.getElementById('join-room').disabled = true;
+    document.getElementById('roomid').disabled = true;
+}
+
+function showRoomURL(roomid) {
+    var roomHashURL = '#' + roomid;
+
+    var html = 'Link to join tour room: <input id="block" href="' + roomHashURL + '" target="_blank" value="' + roomHashURL + '" >';
+
+    html += '<button class="btn btn-outline-danger" data-clipboard-target="#block"><img class="copy" src="copy.png" alt="Copy to clipboard"></button>';
+    
+    var roomURLsDiv = document.getElementById('room-urls');
+    roomURLsDiv.innerHTML = html;
+
+    roomURLsDiv.style.display = 'block';
+}
+
+(function() {
+    var params = {},
+        r = /([^&=]+)=?([^&]*)/g;
+
+    function d(s) {
+        return decodeURIComponent(s.replace(/\+/g, ' '));
+    }
+    var match, search = window.location.search;
+    while (match = r.exec(search.substring(1)))
+        params[d(match[1])] = d(match[2]);
+    window.params = params;
+})();
+
+var roomid = '';
+if (localStorage.getItem(connection.socketMessageEvent)) {
+    roomid = localStorage.getItem(connection.socketMessageEvent);
+} else {
+    roomid = connection.token();
+}
+document.getElementById('roomid').value = roomid;
+document.getElementById('roomid').onkeyup = function() {
+    localStorage.setItem(connection.socketMessageEvent, document.getElementById('roomid').value);
+};
+
+var hashString = location.hash.replace('#', '');
+if (hashString.length && hashString.indexOf('comment-') == 0) {
+    hashString = '';
+}
+
+var roomid = params.roomid;
+if (!roomid && hashString.length) {
+    roomid = hashString;
+}
+
+if (roomid && roomid.length) {
+    document.getElementById('roomid').value = roomid;
+    localStorage.setItem(connection.socketMessageEvent, roomid);
+
+    // auto-join-room
+    (function reCheckRoomPresence() {
+        connection.checkPresence(roomid, function(isRoomExist) {
+            if (isRoomExist) {
+                connection.join(roomid);
+                return;
+            }
+
+            setTimeout(reCheckRoomPresence, 5000);
+        });
+    })();
+
+    disableInputButtons();
+}
+
+if(navigator.connection &&
+   navigator.connection.type === 'cellular' &&
+   navigator.connection.downlinkMax <= 0.115) {
+  alert('2G is not supported. Please use a better internet service.');
+}
+</script>
+</body>
+</html>
