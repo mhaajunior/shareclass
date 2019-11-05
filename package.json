@@ -2,15 +2,10 @@
   "name": "rtcmulticonnection",
   "preferGlobal": false,
   "version": "3.6.9",
-  "author": {
-    "name": "Muaz Khan",
-    "email": "muazkh@gmail.com",
-    "url": "https://muazkhan.com/"
-  },
-  "description": "RTCMultiConnection is a WebRTC JavaScript wrapper library runs top over RTCPeerConnection API to support all possible peer-to-peer features.",
+  "description": "Screensharing one to many.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/muaz-khan/RTCMultiConnection.git"
+    "url": "https://github.com/zeyasE/shareclass , https://github.com/muaz-khan/RTCMultiConnection.git"
   },
   "scripts": {
     "start": "node server.js",
@@ -61,7 +56,6 @@
   },
   "analyze": false,
   "license": "MIT",
-  "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/muaz-khan/RTCMultiConnection/issues",
     "email": "muazkh@gmail.com"
@@ -70,6 +64,7 @@
   "tonicExampleFilename": "npm-test.js",
   "_from": "rtcmulticonnection@",
   "devDependencies": {
+    "cucumber": "^6.0.3",
     "grunt": "0.4.5",
     "grunt-bump": "0.7.0",
     "grunt-cli": "0.1.13",
