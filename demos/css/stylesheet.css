@@ -16,7 +16,7 @@ p1 {
     font-family: 'Lato Bold', sans-serif;
     src: url(Lato/Lato-Bold.ttf);
     color: rgb(104, 194, 232);
-    font-size: 35px;
+    font-size: 40px;
 }
 
 div.menu{
@@ -38,13 +38,15 @@ div.r{
 }
 
 div.margin{
-    background-color: #f0e8e8;
+    background-color: #b5b6ff;
+    margin-top: 50px;
 }
 
 div.controlsize{
     height: 55%;
     width: 65%;
     margin: auto;
+    margin-bottom: 100px;
 }
 
 html, body, section, ul, li, nav, a, h1, h2 {
@@ -62,6 +64,7 @@ body {
     font-family: "Whitney SSm A", "Whitney SSm B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
     font-size: 17px;
     line-height: 1.5em;
+    background-color: #000000;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -86,6 +89,13 @@ h1 {
     font-size: 25px;
     text-align: center;
     color: #000000;
+    padding: 20px;
+}
+
+h1.head {
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff  ;
     padding: 20px;
 }
 
@@ -130,11 +140,11 @@ ul li, nav li {
 
 a {
     margin: 0 10px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 a, h2 {
-    color: #000000  ;
+    color: #ffffff;
 }
 
 a:hover {
@@ -149,7 +159,7 @@ a:hover {
   text-align: center;
 }
 
-button {
+button.main {
   -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
   -webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
   box-shadow:inset 0px 39px 0px -24px #e67a73;
@@ -166,7 +176,7 @@ button {
   text-shadow:0px 1px 0px #b23e35;
 }
 button:hover {
-  background-color:#eb675e;
+  background-color:#486ccc;
 }
 button:active {
   position:relative;
