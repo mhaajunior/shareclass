@@ -15,8 +15,8 @@ p.border {
 p1 {
     font-family: 'Lato Bold', sans-serif;
     src: url(Lato/Lato-Bold.ttf);
-    color: rgb(104, 194, 232);
-    font-size: 40px;
+    color: rgb(255, 0, 0);
+    font-size: 90px;
 }
 
 div.menu{
@@ -24,13 +24,14 @@ div.menu{
     margin-top: 35px;
 }
 
-div.head{
-    float: center;
+div.row{
+    position: relative;   
 }
 
-div.row {
-    text-align: right;
-    margin-top: 15px;
+div.row h1{
+    margin-top: 200px;
+    margin-left: 45%;
+    margin-right: 40%;
 }
 
 div.r{
@@ -38,15 +39,16 @@ div.r{
 }
 
 div.margin{
-    background-color: #b5b6ff;
-    margin-top: 50px;
+    background-color: #ffffff;
+    margin-top: 0px;
 }
 
 div.controlsize{
-    height: 55%;
+    height: 85%;
     width: 65%;
     margin: auto;
-    margin-bottom: 100px;
+    margin-top: 150px;
+    margin-bottom: 50px;
 }
 
 html, body, section, ul, li, nav, a, h1, h2 {
@@ -93,7 +95,7 @@ h1 {
 }
 
 h1.head {
-    font-size: 25px;
+    font-size: 45px;
     text-align: center;
     color: #ffffff  ;
     padding: 20px;
@@ -126,7 +128,7 @@ img.dotcom{
 }
 
 header {
-    height: 50px;
+    height: 680px;
 }
 
 section, header, footer {
@@ -157,7 +159,14 @@ a:hover {
 
 .make-center {
   text-align: center;
+  background-color: #ffffff;
+  margin-top: 0px;
+  height: 680px;
 }
+
+ divs.make-center{
+    text-align: center;
+ }
 
 button.main {
   -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
@@ -176,7 +185,7 @@ button.main {
   text-shadow:0px 1px 0px #b23e35;
 }
 button:hover {
-  background-color:#486ccc;
+  background-color:#ff0000;
 }
 button:active {
   position:relative;
@@ -208,7 +217,7 @@ button[disabled], input[disabled] {
     width: 25px;
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 625px) {
     tr, td, .logo {
         display: block;
     }
@@ -262,7 +271,6 @@ button[disabled], input[disabled] {
     .header {
         position: static;
         border: 0;
-        box-shadow: rgb(84, 145, 208) 0px 2px 0px 0px;
     }
 
     .no-mobile {

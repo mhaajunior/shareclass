@@ -26,41 +26,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <div class="container-fluid">
-      <div class="row">
-        <a class="logo" href="/"><img src="/demos/ScreenLogo.png" class="rounded-circle"></a>
-        <h1 class="head"><p1>ShareScreen</p1> Dotcom</h1>
-        <div style="margin-top:30px;">
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-          <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" class="btn btn-first"><a class="no-mobile" href="/">Home</a></button>
-            <button type="button" class="btn btn-first"><a class="no-mobile" href="/">Styles</a></button>
-            <button type="button" class="btn btn-first"><a class="no-mobile" href="https://www.rtcmulticonnection.org/FAQ/">FAQ</a></button>
-            <button type="button" class="btn btn-first"><a class="no-mobile" href="https://github.com/zeyasE/shareclass">Github</a></button>
-            <button type="button" class="btn btn-first"><a class="no-mobile" href="https://gmail.com">Contact</a></button>
+      <div style="margin-top:30px; float: right;">
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-first"><a class="no-mobile" href="/">Home</a></button>
+              <button type="button" class="btn btn-first"><a class="no-mobile" href="/">Styles</a></button>
+              <button type="button" class="btn btn-first"><a class="no-mobile" href="https://www.rtcmulticonnection.org/FAQ/">FAQ</a></button>
+              <button type="button" class="btn btn-first"><a class="no-mobile" href="https://github.com/zeyasE/shareclass">Github</a></button>
+              <button type="button" class="btn btn-first"><a class="no-mobile" href="https://gmail.com">Contact</a></button>
+            </div>
           </div>
         </div>
-      </div>
+    <div class="row">
+      <!-- <a class="logo" href="/"><img src="/demos/ScreenLogo.png" class="rounded-circle"></a> -->
+      <h1 class="head"><p1>ShareScreen</p1> Dotcom</h1>
     </div>
   </header>
-  <div class="margin">
+  <div class="make-center">
     <h1>Screen Sharing Online<p>One to many screen sharing using RTCMulticonnection.</p></h1>
     <section class="make-center">
       <div class="make-center">
         <button id="open-room" class="main" data-toggle="tooltip" data-placement="top" title="Click to build room" >Host Screen</button>
         <!-- href="/demos/share.html" -->
         <button id="join-room" class="main" data-toggle="tooltip" data-placement="top" title="Click to join room">Join Screen</button>
-        <button id="open-or-join-room" class="main" class="no-mobile">Open or Join</button>
+      <button id="open-or-join-room" class="main" class="no-mobile">Open or Join</button></br></br>
+      <input type="text" id="roomid" value="abcdef" autocorrect=off autocapitalize=off size=20>
+      <div id="room-urls" style="text-align: center;display: none;margin: 15px -10px;border-left: 0;border-right: 0;"></div>
       </div>
-    </br>
-    <input type="text" id="roomid" value="abcdef" autocorrect=off autocapitalize=off size=20>
     </section>
   </br>
   </div>
-  <div class="make-center">
-    <div id="videos-container" style="margin: 10px 0; padding: 10px;"></div>
+  <divs class="make-center">
+    <div id="videos-container" style="margin: 30% 0; padding: 10px;"></div>
   </div>
-    <div id="room-urls" style="text-align: center;display: none;background: #f0e8e8;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
-  
   <div class="controlsize">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-block-start: 50px;">
       <ol class="carousel-indicators">
