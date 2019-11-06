@@ -254,7 +254,7 @@ function showRoomURL(roomid) {
 
     var html = 'Link to join tour room: <input id="block" href="' + roomHashURL + '" target="_blank" value="' + roomHashURL + '" >';
 
-    html += '<button class="btn btn-outline-danger" data-clipboard-target="#block"><img class="copy" src="copy.png" alt="Copy to clipboard"></button>';
+    html += '<button class="btn btn-outline-danger" data-clipboard-text="# '+ roomHashURL + '"><img class="copy" src="copy.png" alt="Copy to clipboard"></button>';
     
     var roomURLsDiv = document.getElementById('room-urls');
     roomURLsDiv.innerHTML = html;
