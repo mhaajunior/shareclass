@@ -43,22 +43,31 @@
     </div>
   </header>
   <div class="make-center">
-    <h1>Screen Sharing Online<p>One to many screen sharing using RTCMulticonnection.</p></h1>
-    <section class="make-center">
-      <div class="make-center">
-        <button id="open-room" class="main" data-toggle="tooltip" data-placement="top" title="Click to build room" >Host Screen</button>
-        <!-- href="/demos/share.html" -->
-        <button id="join-room" class="main" data-toggle="tooltip" data-placement="top" title="Click to join room">Join Screen</button>
-      <button id="open-or-join-room" class="main" class="no-mobile">Open or Join</button></br></br>
-      <input type="text" id="roomid" value="abcdef" autocorrect=off autocapitalize=off size=20>
-      <div id="room-urls" style="text-align: center;display: none;margin: 15px -10px;border-left: 0;border-right: 0;"></div>
+    <div class="row align-self-center">
+      <div class="col" id="groupbody">
+        <div class="col" style="font-size: 300%;float: left;"><div class="row" style="padding-top: 35px;">&nbsp;&nbsp;Screen</div><div class="row" style="padding-top: 35px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sharing</div><div class="row" style="padding-top: 35px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online</div></br></div><div class="text-justify" style="padding-top: 80px;padding-left: 50px;float: right;font-size: 110%;">For everyone that want to share your screen to another.This screen shre online that can connect one to many screen sharing and this project is using RTCMulticonnection.</div>
       </div>
-    </section>
+      <div class="col" id="groupbutton">
+        <div class="row">
+          <button id="open-room" class="main" data-toggle="tooltip" data-placement="top" title="Click to build room" >Host Screen</button>
+        </div>
+        <div class="row">
+          <button id="join-room" class="main" data-toggle="tooltip" data-placement="top" title="Click to join room">Join Screen</button>
+        </div>
+        <div class="row">
+          <button id="open-or-join-room" class="main" class="no-mobile">Open or Join</button>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <input type="text" style="padding: 10px; width: 245px;" id="roomid" value="abcdef" autocorrect=off autocapitalize=off size=20>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <div id="room-urls" style="text-align: center;display: none;width: auto;margin: 15px -10px;border-left: 0;border-right: 0;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
   </br>
-  </div>
-  <divs class="make-center">
-    <div id="videos-container" style="margin: 30% 0; padding: 10px;"></div>
-  </div>
+  <div id="videos-container" style="margin: 1% 0; padding: 10px;text-align: center;"></div>
   <div class="controlsize">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-block-start: 50px;">
       <ol class="carousel-indicators">
