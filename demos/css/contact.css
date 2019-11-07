@@ -1,8 +1,23 @@
+.logo img {
+    height: 60px;
+    width: 50px;
+    margin-left: 60%;
+    margin-top: 28%;
+}
+
+header {
+    height: 680px
+}
+
 @font-face {
     font-family: 'Lato', sans-serif;
     src: url(Lato/Lato-Light.ttf);
     font-weight: 400;
     font-style: normal;
+}
+
+.div1{
+    height: 680px;
 }
 
 p.border {
@@ -17,6 +32,7 @@ p1 {
     src: url(Lato/Lato-Bold.ttf);
     color: rgb(255, 0, 0);
     font-size: 90px;
+    margin-left: 50%;
 }
 
 #bodyrow {
@@ -26,11 +42,6 @@ p1 {
 #groupbody {
     float: left;
     margin-top: 55px;
-}
-
-div.container-fluid{
-    vertical-align: middle;
-    width: 100%;
 }
 
 div.menu{
@@ -60,9 +71,8 @@ div.margin{
 div.controlsize{
     height: 105%;
     width: 100%;
-    margin: auto;
-    margin-top: 1%;
-    margin-bottom: 50px;
+    margin-top: 225px;
+    margin-bottom: 0%;
 }
 
 html, body, section, ul, li, nav, a, h1, h2 {
@@ -137,21 +147,10 @@ img.dotcom{
     float: center;
 }
 
-.logo {
-    margin-top: 1%;
-    float: right;
-    display: block;
-}
-
 .logo img {
     height: 60px;
     width: 50px;
 }
-
-header {
-    height: 680px;
-}
-
 section, header, footer {
     padding: 5px 20px;
 }
