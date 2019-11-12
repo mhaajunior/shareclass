@@ -138,17 +138,14 @@ function serverHandler(request, response) {
                     'Content-Type': 'text/html'
                 });
 
-                if (filename.indexOf(resolveURL('/demos/share.html"/')) !== -1) {
-                    filename = filename.replace(resolveURL('/demos/Tutorial/'), '');
-                    filename += resolveURL('/demos/index.html');
-                }else if (filename.indexOf(resolveURL('/demos')) !== -1) {
-                    filename = filename.replace(resolveURL('/demos/Tutorial/'), '');
-                    filename += resolveURL('/demos/index.html');
-                }else if (filename.indexOf(resolveURL('/demos')) !== -1) {
+                 // if (filename.indexOf(resolveURL('/demos/share.html"/')) !== -1) {
+                //     filename = filename.replace(resolveURL('/demos/share/'), '');
+                //     filename += resolveURL('/demos/index.html');
+                if (filename.indexOf(resolveURL('/demos')) !== -1) {
                     filename = filename.replace(resolveURL('/demos/'), '');
                     filename = filename.replace(resolveURL('/demos'), '');
                     filename += resolveURL('/demos/index.html');
-                }else {
+                } else {
                     filename += resolveURL(config.homePage);
                 }
             }
