@@ -138,7 +138,7 @@ function serverHandler(request, response) {
                     'Content-Type': 'text/html'
                 });
 
-                // if (filename.indexOf(resolveURL('/demos/share.html"/')) !== -1) {
+                 // if (filename.indexOf(resolveURL('/demos/share.html"/')) !== -1) {
                 //     filename = filename.replace(resolveURL('/demos/share/'), '');
                 //     filename += resolveURL('/demos/index.html');
                 if (filename.indexOf(resolveURL('/demos')) !== -1) {

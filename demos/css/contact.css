@@ -1,0 +1,357 @@
+.logo img {
+    height: 60px;
+    width: 50px;
+    margin-left: 60%;
+    margin-top: 28%;
+}
+
+header {
+    height: 680px
+}
+
+@font-face {
+    font-family: 'Lato', sans-serif;
+    src: url(Lato/Lato-Light.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.div1{
+    height: 680px;
+}
+
+p.border {
+    border-bottom: solid;
+    border-width: 100px;
+    border-block-color: black;
+    margin-top: 35px;
+}
+
+p1 {
+    font-family: 'Lato Bold', sans-serif;
+    src: url(Lato/Lato-Bold.ttf);
+    color: rgb(255, 0, 0);
+    font-size: 90px;
+    margin-left: 50%;
+}
+
+#bodyrow {
+    height: 680px;
+}
+
+#groupbody {
+    float: left;
+    margin-top: 55px;
+}
+
+div.menu{
+    float: right;
+    margin-top: 35px;
+}
+
+div.row{
+    position: relative;   
+}
+
+div.row h1{
+    margin-top: 200px;
+    margin-left: 45%;
+    margin-right: 40%;
+}
+
+div.r{
+    text-align: right;
+}
+
+div.margin{
+    background-color: #ffffff;
+    margin-top: 0px;
+}
+
+div.controlsize{
+    height: 105%;
+    width: 100%;
+    margin-top: 225px;
+    margin-bottom: 0%;
+}
+
+html, body, section, ul, li, nav, a, h1, h2 {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    text-decoration: none;
+}
+
+
+body {
+    font-family: "Whitney SSm A", "Whitney SSm B", "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    font-size: 17px;
+    line-height: 1.5em;
+    background-color: #000000;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: inherit;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: inherit;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: inherit;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: inherit;
+}
+
+img.copy {
+    height:20px;
+    width:20px;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: left;
+    color: #000000;
+    padding: 20px;
+}
+
+b1 {
+    font-size:50px;
+    color: #000000;
+    padding-top: 50px;
+}
+
+h1.head {
+    font-size: 45px;
+    text-align: center;
+    color: #ffffff  ;
+    padding: 20px;
+}
+
+h1 p {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+img.dotcom{
+    margin-top: 15px;
+    width: 70%;
+    height: 60%;
+    float: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 50px;
+}
+section, header, footer {
+    padding: 5px 20px;
+}
+
+ul li, nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+a {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+a, h2 {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #671345;
+}
+
+.highlighted {
+    color: #EC008C;
+}
+
+.make-center {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 0px 0px 0px 0px;
+  height: 680px;
+  width: 100%;
+}
+
+button.main {
+  -moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  -webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+  box-shadow:inset 0px 39px 0px -24px #e67a73;
+  background-color:#e4685d;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #ffffff;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  padding:12px 20px;
+  text-decoration:none;
+  margin-top: 50px;
+  text-shadow:0px 1px 0px #b23e35;
+  font-size: 25px;
+  width: 245px;
+}
+
+#groupbutton{
+    text-align: center;
+    padding-left: 20%;
+    margin-top: 100px;
+}
+
+button:hover {
+  background-color:#ff0000;
+}
+
+button:active {
+  position:relative;
+  top:1px;
+}
+
+button[disabled], input[disabled] {
+  background: transparent!important;
+  box-shadow: none!important;
+  text-shadow: none!important;
+  color: #dcd7d7!important;
+  border: 1px solid #dcd7d7!important;
+  cursor: not-allowed!important;
+}
+
+.menu-explorer {
+    color: transparent!important;
+    display: block;
+    display: none;
+    text-align: center;
+    position: absolute;
+    margin-right: 12px;
+    margin-top: 12px;
+    right: 0;
+}
+
+.menu-explorer img {
+    vertical-align: middle;
+    width: 25px;
+}
+
+@media all and (max-width: 910px) {
+    tr, td, .logo {
+        display: block;
+    }
+
+    p1{
+        font-size: 50%;
+    }
+
+    .make-center {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 0px 0px 0px 0px;
+        height: 20%;
+        width: 100%;
+      }
+
+    .logo {
+        text-align: center;
+    }
+
+    nav li {
+        border: 0;
+        display: block;
+        text-align: right;
+    }
+
+    nav li img {
+        float: right;
+        margin-right: 0;
+        margin-left: 12px;
+    }
+
+    div.col{
+        font-size: 100%;
+        padding: 4% 6% 0% 1%;
+    }
+
+    nav {
+        height: auto;
+        margin: 0;
+        display: none;
+
+        position: fixed;
+        left: auto;
+        right: 0;
+        top: 0;
+        z-index: 9;
+        background: white;
+        width: auto;
+        height: 100%;
+        box-shadow: rgb(84, 145, 208) 0px 0 0px 2px;
+    }
+
+    nav li {
+        border-bottom: 1px solid rgb(84, 145, 208);
+        text-align: center;
+        line-height: 2;
+    }
+
+    nav li a {
+        padding-right: 3px;
+    }
+
+    .menu-explorer {
+        display: block;
+    }
+
+    .header {
+        position: static;
+        border: 0;
+    }
+
+    .no-mobile {
+        display: none!important;
+        opacity: 0!important;
+        visibility: hidden!important;
+        z-index: -1!important;
+        width: 0!important;
+        height: 0!important;
+        overflow: hidden!important;
+        border: 0!important;
+        box-shadow: none!important;
+    }
+
+    nav a, .menu-explorer {
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 910px) {
+    button, input {
+        display: block;
+        margin: 5px 10px;
+    }
+}
+
+@media all and (max-width: 910px) {
+    h1 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (orientation:portrait) and (min-width: 350px) {
+    .header {
+        position: fixed!important;
+        border-bottom: 1px solid white!important;
+        box-shadow: rgb(84, 145, 208) 0px 1px 0px 0px!important;
+    }
+}
